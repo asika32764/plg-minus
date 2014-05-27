@@ -95,8 +95,8 @@ CSS;
 
 		echo $css;
 
-		echo $installScript = dirname($path) . '/windwalker/src/System/installscript.php';
-die;
+		$installScript = dirname($path) . '/windwalker/src/System/installscript.php';
+
 		if (!is_file($installScript))
 		{
 			$installScript = JPATH_LIBRARIES . '/windwalker/src/System/installscript.php';
