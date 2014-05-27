@@ -18,5 +18,6 @@
 		<filename>index.html</filename>
 		<filename>composer.json</filename>
 		<filename>composer.lock</filename>
+		<filename>install.php</filename>
 	</files>
 </extension>
