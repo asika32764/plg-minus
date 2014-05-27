@@ -1,0 +1,11 @@
+{
+	"require" : {
+		"mrclay/minify" : "2.*"
+	},
+
+	"autoload" : {
+		"psr-0" : {
+			"" : "src/"
+		}
+	}
+}

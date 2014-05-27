@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.2" type="plugin" group="system">
+<extension version="3.3" type="plugin" group="system">
 	<name>plg_system_minus</name>
+	<author>ASika</author>
+	<creationDate>2014-5</creationDate>
+	<copyright>Copyright (C) 2014 Open Asikart.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>asika32764@gmail.com</authorEmail>
+	<authorUrl>ext.asikart.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_MINUS_XML_DESCRIPTION</description>
+	<files>
+		<folder>src</folder>
+		<folder>vendor</folder>
+		<folder>language</folder>
+
+		<filename plugin="minus">minus.php</filename>
+		<filename>index.html</filename>
+		<filename>composer.json</filename>
+		<filename>composer.lock</filename>
+	</files>
 </extension>

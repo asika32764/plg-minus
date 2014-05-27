@@ -1,10 +1,12 @@
 <?php
 /**
- * Part of bamahome project. 
+ * Part of minus project.
  *
  * @copyright  Copyright (C) 2011 - 2014 SMS Taiwan, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
+
+defined('_JEXEC') or die;
 
 /**
  * Class Minus_Handler_Css
@@ -27,7 +29,7 @@ class Minus_Handler_Css extends Minus_Handler_Base
 	 */
 	public function __construct($doc)
 	{
-		JLoader::register('CSSmin', JPATH_LIBRARIES . '/minify/Cssmin.php');
+		JLoader::register('CSSmin', PLG_SYSTEM_MINUS . '/src/Cssmin.php');
 
 		parent::__construct($doc);
 	}
@@ -67,9 +69,7 @@ class Minus_Handler_Css extends Minus_Handler_Base
 	 */
 	protected function doCompress($data)
 	{
-		$css  = new CSSmin;
-
-		return $css->run($data);
+		return Minify_CSS_Compressor::process($data);
 	}
 
 	/**

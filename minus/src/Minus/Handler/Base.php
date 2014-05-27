@@ -1,10 +1,12 @@
 <?php
 /**
- * Part of bamahome project. 
+ * Part of minus project.
  *
  * @copyright  Copyright (C) 2011 - 2014 SMS Taiwan, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
+
+defined('_JEXEC') or die;
 
 /**
  * Class Minus_Handler_Base
@@ -174,7 +176,10 @@ abstract class Minus_Handler_Base
 		$file = $this->regularizeUrl($url);
 
 		// Init Http
-		$file = str_replace('localhost', '127.0.0.1', $file);
+		if (IS_WIN)
+		{
+			$file = str_replace('localhost', '127.0.0.1', $file);
+		}
 
 		$http = JHttpFactory::getHttp(new JRegistry, 'curl');
 

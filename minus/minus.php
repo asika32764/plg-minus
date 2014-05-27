@@ -8,6 +8,8 @@
 
 defined('_JEXEC') or die;
 
+define('PLG_SYSTEM_MINUS', __DIR__);
+
 /**
  * Class PlgSystemMinus
  *
@@ -20,7 +22,7 @@ class PlgSystemMinus extends JPlugin
 	 *
 	 * @var  bool
 	 */
-	protected $debug = true;
+	protected $debug = false;
 
 	/**
 	 * onBeforeRender
@@ -37,8 +39,7 @@ class PlgSystemMinus extends JPlugin
 		}
 
 		jimport('joomla.filesystem.file');
-		JLoader::registerNamespace('Minus', __DIR__);
-		JLoader::registerNamespace('Minify', JPATH_LIBRARIES . '/minify');
+		include_once __DIR__ . '/vendor/autoload.php';
 
 		$doc = JFactory::getDocument();
 
