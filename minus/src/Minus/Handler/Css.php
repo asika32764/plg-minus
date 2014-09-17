@@ -84,10 +84,13 @@ class Minus_Handler_Css extends Minus_Handler_Base
 	{
 		$that = $this;
 
+		$path = dirname($url);
+		$path = str_replace(trim(JUri::root(), '/'), JPATH_ROOT, $path);
+
 		// Rewrite Url
 		$newFile = Minify_CSS_UriRewriter::rewrite(
 			$file,
-			dirname($url),
+			$path,
 			$_SERVER['DOCUMENT_ROOT']
 		);
 
