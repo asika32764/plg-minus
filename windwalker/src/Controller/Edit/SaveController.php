@@ -186,7 +186,7 @@ class SaveController extends AbstractItemController
 			$this->app->setUserState($this->context . '.data', $validData);
 
 			// Redirect back to the edit screen.
-			throw new \Exception(\JText::sprintf('JLIB_APPLICATION_ERROR_SAVE_FAILED', $e->getMessage()));
+			throw new \Exception(\JText::sprintf('JLIB_APPLICATION_ERROR_SAVE_FAILED', $e->getMessage()), 500, $e);
 		}
 
 		return $validData;
@@ -202,6 +202,11 @@ class SaveController extends AbstractItemController
 	protected function postExecute($return = null)
 	{
 		$this->input->set('layout', null);
+
+		// Attempt to check-in the current record.
+		$data = array('cid' => array($this->recordId), 'quiet' => true);
+
+		$this->fetch($this->prefix, $this->viewList . '.check.checkin', $data);
 
 		// Clear the record id and data from the session.
 		$this->releaseEditId($this->context, $this->recordId);

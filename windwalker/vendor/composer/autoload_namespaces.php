@@ -7,9 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Whoops' => array($vendorDir . '/filp/whoops/src'),
+    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
-    'Joomla\\Session' => array($vendorDir . '/joomla/session'),
     'Joomla\\Console' => array($vendorDir . '/asika/joomla-console'),
-    'Joomla\\Application' => array($vendorDir . '/joomla/application'),
     '' => array($vendorDir . '/asika/php-code-generator/src'),
 );
